@@ -1,6 +1,5 @@
 module DPSphericalMeans
 
-using BenchmarkTools
 using LinearAlgebra
 using MKL
 
