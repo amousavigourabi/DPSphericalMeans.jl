@@ -10,7 +10,7 @@ function dp_spherical_means!(
   counts::Vector{Int},
   X::Matrix{T},
   scores::Vector{T},
-  λ::T,
+  λ::Vector{T},
   Kref::Base.RefValue{Int},
   n::Int
 )::Nothing where {T<:AbstractFloat}
@@ -25,7 +25,7 @@ function dp_spherical_means!(
     end
 
     best_k = 0
-    best_score = λ
+    best_score = λ[n]
 
     @simd for k in 1:K
       s = scores[k]
